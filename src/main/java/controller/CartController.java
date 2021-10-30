@@ -44,7 +44,7 @@ public class CartController extends HttpServlet {
 				req.setAttribute("products", cartDao.queryProducts());
 				break;
 			default:
-				rd = req.getRequestDispatcher("/form/index.jxp");
+				rd = req.getRequestDispatcher("/form/index.jsp");
 				req.setAttribute("products", cartDao.queryProducts());
 		}
 		if(rd != null) {

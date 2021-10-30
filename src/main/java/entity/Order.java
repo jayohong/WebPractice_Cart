@@ -6,10 +6,10 @@ public class Order {
 	private Integer id;    // 訂單編號
 	private Integer userId;// 訂貨人id
 	private Integer productId;//商品 id
-	private Date ts;      //下單時間
+	private Date ts ;      //下單時間
 		
 	//一開始宣告直接給值可以
-	//ts = new Date();但這樣寫好像錯 為什麼?
+	//ts = new Date();//但這樣寫好像錯 為什麼?
 	
 	public Order() {
 		
@@ -19,7 +19,7 @@ public class Order {
 		this.id = id;
 		this.userId = userId;
 		this.productId = productId;
-		this.ts = new Date();
+		//this.ts = new Date();
 	}
 	public Integer getId() {
 		return id;

@@ -12,6 +12,13 @@ import entity.Order;
 import entity.Product;
 
 public class CartDao extends BaseDao {
+//	public static void main(String args[]) {
+//		CartDao cartDao = new CartDao();
+//		List<Product> products = cartDao.queryProducts();
+//		products.stream().forEach(p ->System.out.println(p.getName()));
+//	}
+	
+	
 //	//使用static關鍵字可以讓程式被OS載入時就被儲存於記憶體中，直到Application結束為止。
 //	private static List<Product> products;
 //	private static List<Order> orders;
@@ -26,6 +33,7 @@ public class CartDao extends BaseDao {
 //		products.add(new Product(5,"彈珠",50,10));
 //	}
 
+	
 	// 查詢所有商品
 	public List<Product> queryProducts() {
 		// return products;

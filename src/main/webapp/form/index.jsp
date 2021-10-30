@@ -34,11 +34,19 @@
 			編號:<input type="text" name="id" value="${user.id}"
 				readonly="readonly"> <!-- readonly不可修改 -->
 			<p />
+			
 			禮品:
 			<!-- var代表当前条目的变量名称  items要被循环的信息 -->
+			
+			<!--
+			流程說明 
+			1 開啟index.jsp
+			2.被PathRedirectFilter攔截並重導至/servlet/cart(CartController(get方式))
+			3 因為不帶參數所以攜帶products資料再重導回index.jsp(此時才有products的資料)
+			 -->
 			<c:forEach var="p" items="${ products }">
-				<input type="checkbox" name="data" value="${p.id}"}">${ p.name }
-		</c:forEach>
+				<input type="checkbox" name="data" value="${ p.id }"> ${ p.name }
+			</c:forEach>
 			<p />
 			<button type="submit" class="pure-button pure-button-primary">加入購物車</button>
 			<button type="button"
