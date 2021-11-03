@@ -14,8 +14,12 @@ import entity.Product;
 public class CartDao extends BaseDao {
 //	public static void main(String args[]) {
 //		CartDao cartDao = new CartDao();
+//		System.out.println("queryProducts方法測試");
 //		List<Product> products = cartDao.queryProducts();
 //		products.stream().forEach(p ->System.out.println(p.getName()));
+//		System.out.println("queryOrderByUserId方法測試");
+//		List<Order> orders = cartDao.queryOrdersByUserId(1);
+//		orders.stream().forEach(o -> System.out.println(o.getTs()));
 //	}
 	
 	
@@ -115,11 +119,19 @@ public class CartDao extends BaseDao {
 			pstmt.setInt(1, userId);
 			ResultSet rs = pstmt.executeQuery();
 			while(rs.next()) {
-				int id = rs.getInt("id");				
-				int user_id = rs.getInt("user_id");				
+				int id = rs.getInt("id");
+				//System.out.println("id:"+id);
+				int user_id = rs.getInt("user_id");	
+				//System.out.println("User id:"+user_id);
 				int product_id = rs.getInt("product_id");				
 				Date ts = rs.getDate("ts");
+				System.out.println(ts.toString());
 				
+//				Date date = new Date();
+//				System.out.println("date="+date.toString());
+				Order order=  new Order(id,user_id,product_id);
+				order.setTs(ts);
+				orders.add(order);
 			}
 			
 		}catch(Exception e) {

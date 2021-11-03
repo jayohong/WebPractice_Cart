@@ -18,31 +18,22 @@
 			編號:<input type="text" name="id" value="${ user.id }" readonly>
 			<p />
 			禮品:
-			<c:forEach var="d" items="${data}">
+			<c:forEach var="d" items="${ data }">
 				<!-- ${ d }: -->
-				<c:forEach var="p" items="products">
-					
-					<!-- 
-					<c:if test="<boolean>" var="<string>" scope="<string>"> ...</c:if> 
-					test:条件
-					var:用于存储条件结果的变量
-					scope:var属性的作用域
-					-->
-					
-					<c:if test="${ p.id eq d}">
-						${p.name} 
-					</c:if>
-					
+				<c:forEach var="p" items="${ products }">
+					<c:if test="${p.id eq d }">${ p.name }</c:if>
 				</c:forEach>
-			
 			</c:forEach>
+
+			
+			
 			<p />
 			<button type="submit" class="pure-button pure-button-primary">結帳</button>
 			<button type="button" 
-					onclick="location.href'${pageContext.request.contextPath}/form.index.jsp'"
+					onclick="location.href='${pageContext.request.contextPath}/form/index.jsp'"
 					class="pure-button pure-button-primary">繼續購物</button>
 			<button type="button" 
-					onclick="location.href'${pageContext.request.contextPath}/servlet/cart?type=2'"
+					onclick="location.href='${pageContext.request.contextPath}/servlet/cart?type=2'"
 					class="pure-button pure-button-primary">查詢訂單紀錄</button>
 			
 		</fieldset>
